@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "Form.hpp"
 
 class   Bureaucrat {
     private:
@@ -38,6 +39,7 @@ class   Bureaucrat {
     /* MEMBER FUNCTIONS */
     void        upGrade(void);
     void        downGrade(void);
+    void        signForm(Form &form);
      /* EXCEPTIONS */
     class GradeTooHighException : public std::exception{
         public:
@@ -49,6 +51,6 @@ class   Bureaucrat {
     };
 };
 
-std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs);
+std::ostream &	operator<<(std::ostream & o, Bureaucrat *rhs);
 
 #endif
