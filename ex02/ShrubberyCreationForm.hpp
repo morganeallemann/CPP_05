@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SchrubberyCreationForm.cpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malleman <malleman@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,30 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCHRUBBERYCREATIONFORM_HPP
-# define SCHRUBBERYCREATIONFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-class SchrubberyCreationForm : public AForm {
+class ShrubberyCreationForm : public AForm {
     private :
         std::string _target;
         // Required grades: sign 145, exec 137
     public :
         /* CONSTRUCTOR */
-        SchrubberyCreationForm();
-        SchrubberyCreationForm(std::string target);
+        ShrubberyCreationForm();
+        ShrubberyCreationForm(std::string target);
         /* COPY CONSTRUCTOR */
-        SchrubberyCreationForm(SchrubberyCreationForm const &copy);
+        ShrubberyCreationForm(ShrubberyCreationForm const &copy);
         /* DESTRUCTOR */
-        virtual ~SchrubberyCreationForm();
+        virtual ~ShrubberyCreationForm();
         /* SURCHARGED OPERATOR */
-        SchrubberyCreationForm  &operator=(SchrubberyCreationForm const &rhs);
+        ShrubberyCreationForm  &operator=(ShrubberyCreationForm const &rhs);
+        /* GETTER */
+        std::string getTarget(void);
         /* MEMBER FUNCTIONS */
         virtual void    execute(Bureaucrat const & executor) const;
-            
-
+        
 };
+std::ostream &	operator<<(std::ostream & o, ShrubberyCreationForm *rhs);
 
 #endif

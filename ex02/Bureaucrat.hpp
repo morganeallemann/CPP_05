@@ -16,7 +16,9 @@
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "AForm.hpp"
 
+class AForm;
 class   Bureaucrat {
     private:
         std::string const   _name;
@@ -33,11 +35,13 @@ class   Bureaucrat {
     /* SURCHARGED OPERATORS */
     Bureaucrat  &operator=(Bureaucrat const &rhs);
     /* GETTERS */
-    std::string getName(void) const;
+    const std::string getName(void) const;
     int         getGrade(void) const;
     /* MEMBER FUNCTIONS */
     void        upGrade(void);
     void        downGrade(void);
+    void        executeForm(AForm const & form);
+    void        signAForm(AForm &form);
      /* EXCEPTIONS */
     class GradeTooHighException : public std::exception{
         public:
@@ -49,6 +53,6 @@ class   Bureaucrat {
     };
 };
 
-std::ostream &	operator<<(std::ostream & o, Bureaucrat const & rhs);
+std::ostream &	operator<<(std::ostream & o, Bureaucrat *rhs);
 
 #endif
