@@ -49,6 +49,6 @@ class   Bureaucrat {
     };
 };
 
-std::ostream &	operator<<(std::ostream & o, Bureaucrat *rhs);
+std::ostream &	operator<<(std::ostream & o, Bureaucrat &rhs);
 
 #endif

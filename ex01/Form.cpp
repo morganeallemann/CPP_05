@@ -77,12 +77,12 @@ char const  *Form::GradeTooLowException::what(void) const throw(){
     return ("Grade is too low");
 }
 
-std::ostream &	operator<<(std::ostream & o, Form *rhs){
+std::ostream &	operator<<(std::ostream & o, Form &rhs){
     std::string sign;
-    if (!rhs->getSigned())
+    if (!rhs.getSigned())
         sign = "not signed";
     else
         sign = "signed";
-	return (o << rhs->getName() << "form, status: " << sign << ", grade needed to signed: " << rhs->getGToSigned() << ", grade needed to execute: " << rhs->getGToExecute());
+	return (o << rhs.getName() << "form, status: " << sign << ", grade needed to signed: " << rhs.getGToSigned() << ", grade needed to execute: " << rhs.getGToExecute());
 }
 

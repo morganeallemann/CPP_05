@@ -18,6 +18,8 @@
 #include <stdexcept>
 #include "Bureaucrat.hpp"
 
+class   Bureaucrat;
+
 class   Form{
     private:
         std::string const   _name;
@@ -54,6 +56,6 @@ class   Form{
         };
 };
 
-std::ostream &	operator<<(std::ostream & o, Form  *rhs);
+std::ostream &	operator<<(std::ostream & o, Form  &rhs);
 
 #endif
